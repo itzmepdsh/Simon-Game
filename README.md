@@ -2,7 +2,7 @@
 
 Welcome to the Simon Game repository! This is a classic electronic memory game that tests your ability to remember and replicate a sequence of colors and sounds. This project is implemented using HTML, CSS, and JavaScript.
 
-![Simon Game]()
+![Simon Game](Simon_Electronic_Game.jpg)
 
 ## Table of Contents
 
