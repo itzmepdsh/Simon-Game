@@ -4,9 +4,20 @@ var avlcolors = ["green","red","yellow","blue"];
 
 var started = false;
 var level = 0;
+
+$(".start-btn").click(function(){
+    if(!started){
+        $(".start-btn").addClass("start-btn-remove");
+        $("#level-title").text("Level " + level);
+        nextSequence();
+        started = true;
+    }
+});
+
 $(document).keypress(function(event){
     if(!started){
-        $("h1").text("Level " + level);
+        $("#level-title").text("Level " + level);
+        $(".start-btn").addClass("start-btn-remove");
         nextSequence();
         started = true;
     }
@@ -36,6 +47,8 @@ function checkAnswer(currentLevel){
             $("body").removeClass("game-over");
         },200);
         $("#level-title").text("Game Over, Press Any Key to Restart");
+        $(".start-btn").removeClass("start-btn-remove");
+        $(".start-btn").text("Start Again!!");
         startOver();
     }
 }
@@ -43,7 +56,7 @@ function checkAnswer(currentLevel){
 function nextSequence(){
     userClickedPattern = [];
     level++;
-    $("h1").text("Level " + level);
+    $("#level-title").text("Level " + level);
 
     var rndmnum = Math.floor(Math.random()*4);
     var chosencolor = avlcolors[rndmnum];
